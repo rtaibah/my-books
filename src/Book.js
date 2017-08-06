@@ -28,8 +28,11 @@ class Book extends Component {
 	render () {
 		return (
 			<div className="book">
-				<div className="book-top">
-					<div className="book-shelf" style={{width: 128, height: '100%', backgroundImage: 'url('+this.props.cover+')'}}>
+					<div className="book-cover" style={{width: 128, height: '100%', backgroundImage: 'url('+this.props.cover+')'}}>
+					</div>
+					<div className="book-info">
+						<div className="book-title">{this.props.title}</div>
+						<div className="book-authors">{this.props.author}</div>
 					</div>
 					<div className="book-shelf-changer">
 						<select value={this.state.value} onChange={this.handleChange}>
@@ -40,9 +43,6 @@ class Book extends Component {
 							<option value="none">None</option>
 						</select>
 					</div>
-				</div>
-					<div className="book-title">{this.props.title}</div>
-					<div className="book-authors">{this.props.author}</div>
 			</div>
 		)
 	}
