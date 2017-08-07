@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import * as BooksAPI from './BooksAPI';
 
 var all= BooksAPI.getAll();
-console.log(all)
+var search = BooksAPI.search("football", 3)
+var update= BooksAPI.update({id: "1wy49i-gQjIC"}, "wantToRead")
+//console.log(update)
 
 class Book extends Component {
 	constructor(props){

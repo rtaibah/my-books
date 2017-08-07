@@ -1,4 +1,4 @@
-html, body, .app, .shelf, .shelf-wrapper, .header {
+html, body, .app, .shelf, .shelf-wrapper, .header, .app-router {
   height: 100%;
 	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
 }
@@ -34,8 +34,7 @@ h2 {
   color: white;
 }
 
-.books-tabs {
-	height: 60px;
+.tabs {
 	background: #37484f;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
@@ -237,7 +236,8 @@ h2 {
 .currently-reading-tab span,
 .want-to-read-tab span,
 .already-read-tab span {
-	padding-top: 16px;
+	padding-top: 12px;
+	padding-bottom: 8px;
 	display: block;
 }
 
@@ -251,4 +251,8 @@ h2 {
 
 .already-read-tabs {
 	grid-column-start: 3;
+}
+
+.active {
+	border-bottom: 4px solid white;
 }
