@@ -1,4 +1,4 @@
-html, body, .app, .shelf, .shelf-wrapper, .header, .app-router {
+html, body, .app, .shelf, .shelf-wrapper, .header, .app-router, .shelves {
   height: 100%;
 	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
 }

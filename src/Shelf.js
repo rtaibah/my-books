@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Book from './Book';
 import { Link } from 'react-router-dom';
 
-
 const bookData = [
   { 
     title: "To Kill a Mockingbird", 
