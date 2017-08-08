@@ -6,7 +6,7 @@ class Header extends Component {
 		return (
 			<div className="header">
 				<div className="list-books-title">
-					<Link to="/reading" replace>
+					<Link to="/">
 						<div className="logo"></div>
 					</Link>
 				</div>

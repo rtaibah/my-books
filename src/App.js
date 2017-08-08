@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+
+import AppRouter from './AppRouter';
 import Search from './Search';
 import Shelf from './Shelf';
-import AppRouter from './AppRouter';
-import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+
+import * as BooksAPI from './BooksAPI.js';
+
 import './App.css';
 
 class App extends Component {
+	constructor(props){
+		super(props);
+		this.state ={
+			currentlyRead: [],
+			read: [],
+			wantToRead: []
+		}
+	}
+
+
   render() {
     var shelves = [
 			{
@@ -19,9 +33,22 @@ class App extends Component {
 			},{
 				shelfName: "Read",
 				className: "already-read",
-				path:"/read"
-			}
-		]
+			}]
+		
+		var booksData = []
+
+		function getAllBooks(){
+			BooksAPI.getAll().then(book => {
+				booksData.book = book
+			})
+		}
+	
+		function updateBooks(book, shelf){
+			BooksAPI.update(book, shelf)
+		}
+		
+		updateBooks({id: "nggnmAEACAAJ"}, "read")
+		getAllBooks()
 
     return (
     	<BrowserRouter>
