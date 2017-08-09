@@ -33,6 +33,7 @@ class App extends Component {
 			},{
 				shelfName: "Read",
 				className: "already-read",
+				path: "/read"
 			}]
 		
 		var booksData = []
@@ -47,8 +48,6 @@ class App extends Component {
 			BooksAPI.update(book, shelf)
 		}
 		
-		updateBooks({id: "nggnmAEACAAJ"}, "read")
-		getAllBooks()
 
     return (
     	<BrowserRouter>
