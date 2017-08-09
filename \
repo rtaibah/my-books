@@ -15,36 +15,18 @@ class App extends Component {
 		super(props);
 
 		this.state ={
-			shelfState: {
-				currentlyReading: [],
-				read: [],
-				wantToRead: []
-			}
+			currentlyRead: [],
+			read: [],
+			wantToRead: []
 		}
 	}	
-	//Grab Books for state. Filter in the render method
 
 	componentDidMount() {
 		BooksAPI.getAll().then(books => {
 				books.map((book) => {
-
-					if (book.shelf === "read"){
-						this.setState({
-							read: this.state.read.concat(book)
-						})
-					}
-
-					if (book.shelf === "currentlyReading"){
-						this.setState({
-							currentlyReading: this.state.currentlyReading.concat(book)
-						})
-					}
-
-					if (book.shelf === "wantToRead"){
-						this.setState({
-							wantToRead: this.state.wantToRead.concat(book)
-						})
-					}
+				if (book.shelf === "read"){this.setState(this.state.read: this.book)}
+				if (book.shelf === "currentlyReading"){this.setState(this.state.currentlyReading: book)}
+				if (book.shelf === "wantToRead"){this.setState(this.state.wantToRead: book)}
 				})
 		})
 	}
@@ -79,13 +61,7 @@ class App extends Component {
 						return (
 							<AppRouter path={shelf.path} key={shelf.shelfName}>
 								<div className="shelf-wrapper">
-									<Shelf 
-										className={"shelf " + shelf.className } 
-										shelfName={shelf.shelfName} 
-										read={this.state.read} 
-										currentlyReading={this.state.currentlyReading} 
-										wantToRead={this.state.wantToRead} 
-									/>
+									<Shelf className={"shelf " + shelf.className } shelfName={shelf.shelfName} />
 								</div>
 							</AppRouter>
 						)})

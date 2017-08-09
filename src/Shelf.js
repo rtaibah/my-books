@@ -51,6 +51,9 @@ const bookData = [
 
 class Shelf extends Component {
     static propTypes = {
+			read: PropTypes.array.isRequired,
+			currentlyReading: PropTypes.array.isRequired,
+			wantToRead: PropTypes.array.isRequired,
       shelfName: PropTypes.string.isRequired,
     }
 
