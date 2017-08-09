@@ -24,7 +24,7 @@ class Book extends Component {
 	render () {
 		return (
 			<div className="book">
-					<div className="book-cover" style={{width: 128, height: '100%', backgroundImage: 'url('+this.props.cover+')'}}>
+					<div className="book-cover" style={{width: 'auto', backgroundSize: 'cover', backgroundImage: 'url('+this.props.cover+')'}}>
 					</div>
 					<div className="book-info">
 						<div className="book-title">{this.props.title}</div>

@@ -41,13 +41,15 @@ class App extends Component {
 		function getAllBooks(){
 			BooksAPI.getAll().then(book => {
 				booksData.book = book
+				console.log(book)
 			})
 		}
 	
 		function updateBooks(book, shelf){
 			BooksAPI.update(book, shelf)
 		}
-		
+
+		getAllBooks()
 
     return (
     	<BrowserRouter>
