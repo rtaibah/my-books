@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import Changer from './Changer';
+
 class Book extends Component {
 	constructor(props){
 		super(props);
@@ -45,15 +47,7 @@ class Book extends Component {
 						<li className="book-page-count">{pageCount}p</li>
 						<li className="book-published-date">{this.findYear(publishedDate)}</li>
 					</ul>
-					<div className="book-shelf-changer">
-						<select value={this.state.value} onChange={this.handleChange}>
-							<option value="none" disabled>Move to...</option>
-							<option value="Currently Reading">Currently Reading</option>
-							<option value="Want to Read">Want to Read</option>
-							<option value="Read">Read</option>
-							<option value="none">None</option>
-						</select>
-					</div>
+					<Changer />
 				</div>
 			</div>
 		)
