@@ -138,7 +138,8 @@ h2 {
   margin: 0;
   justify-content: center;
 }
-.books-grid li {
+
+.books-grid-row {
   text-align: left;
 }
 
@@ -173,6 +174,40 @@ h2 {
 	color: white;
 	font-size: 22px;
 	font-weight: 200;
+}
+
+.book-more-info {
+	margin-top: 10px;
+	list-style-type: none;
+	color: white;
+	font-size: 14px;
+	font-weight: 200;
+	padding: 0;
+}
+
+.book-more-info li {
+	width: 200px;
+}
+
+.book-average-rating,
+.book-page-count,
+.book-published-date {
+	display: inline;
+	padding: 5px 15px 5px 15px;
+	height: 20px;
+	width: 200px;
+}
+
+.book-average-rating {
+	background: #607d8b;
+}
+
+.book-page-count {
+	background: #455964;
+}
+
+.book-published-date {
+	background: #36474f;
 }
 
 .book-shelf-changer {

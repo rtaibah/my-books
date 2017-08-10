@@ -15,37 +15,18 @@ class App extends Component {
 		super(props);
 
 		this.state ={
-			shelfState: {
-				currentlyReading: [],
-				read: [],
-				wantToRead: []
-			}
+			books: []
 		}
 	}	
-	//Grab Books for state. Filter in the render method
 
 	componentDidMount() {
 		BooksAPI.getAll().then(books => {
-				books.map((book) => {
-
-					if (book.shelf === "read"){
-						this.setState({
-							read: this.state.read.concat(book)
-						})
-					}
-
-					if (book.shelf === "currentlyReading"){
-						this.setState({
-							currentlyReading: this.state.currentlyReading.concat(book)
-						})
-					}
-
-					if (book.shelf === "wantToRead"){
-						this.setState({
-							wantToRead: this.state.wantToRead.concat(book)
-						})
-					}
-				})
+				this.setState({books})
+				//books.map((book) => {
+				//	if (book.shelf === "read"){this.setState({read: this.state.read.concat(book)})}
+				//	if (book.shelf === "currentlyReading"){this.setState({currentlyReading: this.state.currentlyReading.concat(book)})}
+				//	if (book.shelf === "wantToRead"){this.setState({wantToRead: this.state.wantToRead.concat(book)})}
+				//})
 		})
 	}
 
@@ -58,15 +39,15 @@ class App extends Component {
 
 		let shelves = [
 			{
-				shelfName: "Currently Reading",
+				shelfName: "currentlyReading",
 				className: "currently-reading",
 				path:"/reading"
 			},{
-				shelfName: "Want to Read",
+				shelfName: "wantToRead",
 				className: "want-to-read",
 				path:"/want"
 			},{
-				shelfName: "Read",
+				shelfName: "read",
 				className: "already-read",
 				path: "/read"
 		}]
@@ -82,9 +63,7 @@ class App extends Component {
 									<Shelf 
 										className={"shelf " + shelf.className } 
 										shelfName={shelf.shelfName} 
-										read={this.state.read} 
-										currentlyReading={this.state.currentlyReading} 
-										wantToRead={this.state.wantToRead} 
+										books={this.state.books} 
 									/>
 								</div>
 							</AppRouter>
