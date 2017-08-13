@@ -47,7 +47,9 @@ class Book extends Component {
 						<li className="book-page-count">{pageCount}p</li>
 						<li className="book-published-date">{this.findYear(publishedDate)}</li>
 					</ul>
-					<Changer book={this.props.book} updateBooks={this.props.updateBooks}/>
+					<div className="book-shelf-changer">
+						<Changer book={this.props.book} updateBooks={this.props.updateBooks}/>
+					</div>
 				</div>
 			</div>
 		)
