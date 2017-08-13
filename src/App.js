@@ -84,9 +84,3 @@ class App extends Component {
 }
 
 export default App;
-
-//books.map((book) => {
-//	if (book.shelf === "read"){this.setState({read: this.state.read.concat(book)})}
-//	if (book.shelf === "currentlyReading"){this.setState({currentlyReading: this.state.currentlyReading.concat(book)})}
-//	if (book.shelf === "wantToRead"){this.setState({wantToRead: this.state.wantToRead.concat(book)})}
-//})
