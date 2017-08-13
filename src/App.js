@@ -13,6 +13,7 @@ class App extends Component {
 
 	constructor(props){
 		super(props);
+		this.updateBooks = this.updateBooks.bind(this);
 
 		this.state ={
 			books: []
@@ -22,18 +23,23 @@ class App extends Component {
 	componentDidMount() {
 		BooksAPI.getAll().then(books => {
 				this.setState({books})
-				//books.map((book) => {
-				//	if (book.shelf === "read"){this.setState({read: this.state.read.concat(book)})}
-				//	if (book.shelf === "currentlyReading"){this.setState({currentlyReading: this.state.currentlyReading.concat(book)})}
-				//	if (book.shelf === "wantToRead"){this.setState({wantToRead: this.state.wantToRead.concat(book)})}
-				//})
 		})
 	}
 
 	updateBooks(book, shelf){
-		BooksAPI.update(book, shelf)
+		BooksAPI.update(book, shelf);
+		const index=this.state.books.indexOf(book);
+		const {books} = this.state;
+		this.setState({
+			// Get all books up to the book we want to update
+			books: [...books.slice(0,index),
+			// Update book shelf
+			{...book, shelf:shelf},
+			// Append all books after book we want to update
+			...books.slice(index+1)
+			]
+		})
 	}
-
 
   render() {
 
@@ -52,7 +58,6 @@ class App extends Component {
 				path: "/read"
 		}]
 
-
     return (
     	<BrowserRouter>
 				<div className="app">
@@ -64,6 +69,7 @@ class App extends Component {
 										className={"shelf " + shelf.className } 
 										shelfName={shelf.shelfName} 
 										books={this.state.books} 
+										updateBooks={this.updateBooks}
 									/>
 								</div>
 							</AppRouter>
@@ -78,3 +84,9 @@ class App extends Component {
 }
 
 export default App;
+
+//books.map((book) => {
+//	if (book.shelf === "read"){this.setState({read: this.state.read.concat(book)})}
+//	if (book.shelf === "currentlyReading"){this.setState({currentlyReading: this.state.currentlyReading.concat(book)})}
+//	if (book.shelf === "wantToRead"){this.setState({wantToRead: this.state.wantToRead.concat(book)})}
+//})

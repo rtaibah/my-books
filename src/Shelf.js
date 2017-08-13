@@ -29,6 +29,8 @@ class Shelf extends Component {
                             cover={book.imageLinks.thumbnail} 
 														pageCount={book.pageCount}
 														publishedDate={book.publishedDate}
+														updateBooks={this.props.updateBooks}
+														book={book}
                           />
                         </li>
                       ))
