@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Changer from './Changer';
 
 class SearchResult extends Component {
 		render() {
@@ -14,13 +15,10 @@ class SearchResult extends Component {
 							}}>
 							</div>
 							<div className="book-shelf-changer__search">
-								<select>
-									<option value="none" disabled>Move to...</option>
-									<option value="currentlyReading">Currently Reading</option>
-									<option value="wantToRead">Want to Read</option>
-									<option value="read">Read</option>
-									<option value="none">None</option>
-								</select>
+								<Changer
+									book={this.props.book}
+									updateBooks={this.props.updateBooks}
+								/>
 							</div>
 						</div>
 						<div className="book-title__search">{this.props.title}</div>

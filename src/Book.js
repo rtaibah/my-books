@@ -41,7 +41,7 @@ class Book extends Component {
 				</div>
 				<div className="book-info">
 					<div className="book-title">{title}</div>
-					<div className="book-authors">{authors.join(' & ')}</div>
+					<div className="book-authors">{Array.isArray(authors) && authors.join(' & ')}</div>
 					<ul className="book-more-info">
 						{ averageRating && <li className='book-average-rating'>{averageRating}/5</li>}
 						<li className="book-page-count">{pageCount}p</li>

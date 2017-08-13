@@ -9,6 +9,8 @@ import * as BooksAPI from './BooksAPI.js';
 
 import './App.css';
 
+	console.log(BooksAPI.getAll());
+	BooksAPI.updateBooks({"iyn4xULK4JUC"}, null)
 class App extends Component {
 
 	constructor(props){
@@ -46,7 +48,7 @@ class App extends Component {
 	searchBooks(query){
 		BooksAPI.search(query, 2).then(
 			searchResults => {
-				searchResults && this.setState({searchResults})
+				this.setState({searchResults})
 			},
 			function (error) {
 			}

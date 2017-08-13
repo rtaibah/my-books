@@ -20,7 +20,7 @@ class Shelf extends Component {
                 <ol className="books-grid">
                     {books.filter(book => (book.shelf === shelfName))
                       .map(book => (
-                        <li className="books-grid-row" key={book.title}>
+                        <li className="books-grid-row" key={book.id}>
                           <Book 
                             shelf={book.shelf} 
                             title={book.title}
@@ -48,4 +48,3 @@ class Shelf extends Component {
 }
 
 export default Shelf;
-//this.props.books.filter(book => console.log(book.previewLink))

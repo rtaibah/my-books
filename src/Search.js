@@ -17,12 +17,17 @@ class Search extends Component {
 				<div className="search-books-results">
 					<ol className="books-grid__search">
 						{ 
-							this.props.searchResults.map(result => (
+							this.props.searchResults.map(book=> (
 								<SearchResult 
-									key={result.id} 
-									title={result.title} 
-									cover={result.imageLinks.thumbnail}
-									author={result.authors}
+									key={book.id} 
+									title={book.title} 
+									cover={book.imageLinks && book.imageLinks.thumbnail}
+									author={Array.isArray(book.authors) && book.authors}
+									book={book}
+									searchBooks={this.props.searchBooks}
+									searchResults={this.props.searchResults}
+									updateBooks={this.props.updateBooks}
+									shelf={book.shelf}
 								/>
 							))
 						}
