@@ -14,15 +14,17 @@ class App extends Component {
 	constructor(props){
 		super(props);
 		this.updateBooks = this.updateBooks.bind(this);
+		this.searchBooks= this.searchBooks.bind(this);
 
-		this.state ={
-			books: []
+		this.state = {
+			books: [],
+			searchResults: []
 		}
 	}	
 
 	componentDidMount() {
 		BooksAPI.getAll().then(books => {
-				this.setState({books})
+			this.setState({books})
 		})
 	}
 
@@ -41,8 +43,13 @@ class App extends Component {
 		})
 	}
 
-  render() {
+	searchBooks(query){
+		BooksAPI.search(query, 2).then(searchResults => {
+			this.setState({searchResults})
+		})
+	}
 
+  render() {
 		let shelves = [
 			{
 				shelfName: "currentlyReading",
@@ -75,8 +82,8 @@ class App extends Component {
 							</AppRouter>
 						)})
 					}
-					<Route exact path='/search' component={Search} />
-				<Route exact path="/" render={() => <Redirect to="/reading" />} />
+					<Route exact path='/search' render={() => <Search searchBooks={this.searchBooks} searchResults={this.state.searchResults}/>} />
+					<Route exact path="/" render={() => <Redirect to="/reading" />} />
 				</div>
 			</BrowserRouter>
     );

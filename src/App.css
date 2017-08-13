@@ -293,3 +293,61 @@ h2 {
 .active {
 	border-bottom: 4px solid white;
 }
+
+/*Search*/
+
+.books-grid__search {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.books-grid__search li {
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.book__search {
+  width: 140px;
+}
+.book-title__search,
+.book-authors__search {
+  font-size: 0.8em;
+}
+.book-title__search {
+  margin-top: 10px;
+}
+.book-authors__search {
+  color: #999;
+}
+
+.book-top__search {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.book-shelf-changer__search {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #60ac5d;
+  background-image: url('./icons/arrow-drop-down-white.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.book-shelf-changer__search select {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
