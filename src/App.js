@@ -47,10 +47,8 @@ class App extends Component {
 		BooksAPI.search(query, 2).then(
 			searchResults => {
 				searchResults && this.setState({searchResults})
-			},
-			function (error) {
 			}
-		)
+		).catch(e =>{console.log("no Results")})
 	}
 
 
