@@ -32,15 +32,29 @@ class App extends Component {
 		BooksAPI.update(book, shelf);
 		const index=this.state.books.indexOf(book);
 		const {books} = this.state;
-		this.setState({
-			// Get all books up to the book we want to update
-			books: [...books.slice(0,index),
-			// Update book shelf
-			{...book, shelf:shelf},
-			// Append all books after book we want to update
-			...books.slice(index+1)
-			]
-		})
+		let listOfBooks = books;
+		listOfBooks.push(book);
+
+		// Handle when new book is added with no index resulting in a '-1' index
+		if (index === -1){
+			console.log(book)
+					this.setState({
+						books: listOfBooks
+					})
+			console.log(books)
+				}
+
+		if (index !== -1){
+			this.setState({
+				// Get all books up to the book we want to update
+				books: [...books.slice(0,index),
+				// Update book shelf
+				{...book, shelf:shelf},
+				// Append all books after book we want to update
+				...books.slice(index+1)
+				]
+			})
+		}
 	}
 
 	searchBooks(query){
@@ -48,7 +62,7 @@ class App extends Component {
 			searchResults => {
 				searchResults && this.setState({searchResults})
 			}
-		).catch(e =>{console.log("no Results")})
+		).catch(e =>{Promise.resolve()})
 	}
 
 

@@ -40,12 +40,24 @@ class Book extends Component {
 				<div className="book-cover" style={{width: 'auto', backgroundSize: 'cover', backgroundImage: 'url('+cover+')'}}>
 				</div>
 				<div className="book-info">
+					{ title &&
 					<div className="book-title">{title}</div>
+					}
 					<div className="book-authors">{Array.isArray(authors) && authors.join(' & ')}</div>
 					<ul className="book-more-info">
-						{ averageRating && <li className='book-average-rating'>{averageRating}/5</li>}
-						<li className="book-page-count">{pageCount}p</li>
-						<li className="book-published-date">{this.findYear(publishedDate)}</li>
+
+						{ averageRating && 
+							<li className='book-average-rating'>{averageRating && averageRating}/5</li>
+						}
+
+						{ pageCount &&
+							<li className="book-page-count">{pageCount && pageCount}p</li>
+						}
+
+						{ publishedDate && 
+							<li className="book-published-date">{this.findYear(publishedDate)}</li>
+						}
+
 					</ul>
 					<div className="book-shelf-changer">
 						<Changer book={this.props.book} updateBooks={this.props.updateBooks}/>
