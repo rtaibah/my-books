@@ -31,16 +31,12 @@ class App extends Component {
     BooksAPI.update(book, shelf);
     const index = this.state.books.indexOf(book);
     const {books} = this.state;
-    let listOfBooks = books;
-    listOfBooks.push(book);
 
     // Handle when new book is added with no index resulting in a '-1' index
     if (index === -1) {
-      console.log(book);
       this.setState({
-        books: listOfBooks,
+        books: [...books.push(book)],
       });
-      console.log(books);
     }
 
     if (index !== -1) {
