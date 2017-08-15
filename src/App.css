@@ -1,6 +1,13 @@
-html, body, .app, .shelf, .shelf-wrapper, .header, .app-router {
+html,
+body,
+.app,
+.shelf,
+.shelf-wrapper,
+.header,
+.app-router {
   height: 100%;
-	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans,
+    Ubuntu, Cantarell, Helvetica Neue, sans-serif;
 }
 
 body {
@@ -8,25 +15,25 @@ body {
 }
 
 h2 {
-	margin: 0;
+  margin: 0;
 }
 
 /* main page */
 
-.logo { 
-	background: url('./icons/logo.svg') no-repeat; 
-	width: 170px; 
-	height: 80px;
-	margin-left: 16px;
-	margin-top: 5px;
+.logo {
+  background: url('./icons/logo.svg') no-repeat;
+  width: 170px;
+  height: 80px;
+  margin-left: 16px;
+  margin-top: 5px;
 }
 
 .list-books-title {
   padding: 10px 0;
   background: #283338;
   text-align: left;
-	padding-left: 15px;
-	height: 70px;
+  padding-left: 15px;
+  height: 70px;
 }
 .list-books-title h1 {
   font-weight: 400;
@@ -35,27 +42,27 @@ h2 {
 }
 
 .tabs {
-	background: #37484f;
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  background: #37484f;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
 .currently-reading {
-	background: #e37475;
+  background: #e37475;
 }
 
 .want-to-read {
-	background: #2cb39a;
+  background: #2cb39a;
 }
 
 .already-read {
-	background: #e29559;
+  background: #e29559;
 }
 
 .bookshelf {
 }
 
 .bookshelf-title {
-	color: white;
+  color: white;
 }
 
 @media (min-width: 600px) {
@@ -85,7 +92,7 @@ h2 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 28px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   font-size: 0;
 }
 
@@ -98,7 +105,7 @@ h2 {
   left: 0;
   z-index: 5;
   display: flex;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(0, 0, 0, 0.23);
 }
 .search-books-input-wrapper {
   flex: 1;
@@ -144,78 +151,78 @@ h2 {
 }
 
 .book {
-	display: grid;
-	grid-template-columns: 128px auto;
+  display: grid;
+  grid-template-columns: 128px auto;
   position: relative;
   height: 200px;
 }
 
 .book-cover {
-	grid-column-start: 1;
-	grid-column-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
 }
 
 .book-info {
-	grid-column-start: 2;
-	grid-column-end: 3;
-	border-bottom: 1px solid rgba(255,255,255,.2);
-	padding-left: 50px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+  padding-left: 50px;
 }
 .book-title,
 .book-authors {
   font-size: 0.8em;
-	color: white;
+  color: white;
 }
 .book-title {
   margin-top: 10px;
-	font-size: 32px;
+  font-size: 32px;
 }
 .book-authors {
-	color: white;
-	font-size: 22px;
-	font-weight: 200;
-	list-style-type: none;
-	padding: 0;
+  color: white;
+  font-size: 22px;
+  font-weight: 200;
+  list-style-type: none;
+  padding: 0;
 }
 
 .book-authors li {
-	display: inline;
+  display: inline;
 }
 
 .book-more-info {
-	margin-top: 10px;
-	list-style-type: none;
-	color: white;
-	font-size: 14px;
-	font-weight: 200;
-	padding: 0;
+  margin-top: 10px;
+  list-style-type: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 200;
+  padding: 0;
 }
 
 .book-average-rating,
 .book-page-count,
 .book-published-date {
-	display: inline;
-	padding: 5px 15px 5px 15px;
-	height: 20px;
-	width: 200px;
+  display: inline;
+  padding: 5px 15px 5px 15px;
+  height: 20px;
+  width: 200px;
 }
 
 .book-average-rating {
-	background: #607d8b;
+  background: #607d8b;
 }
 
 .book-page-count {
-	background: #455964;
+  background: #455964;
 }
 
 .book-published-date {
-	background: #36474f;
+  background: #36474f;
 }
 
 .book-shelf-changer {
   position: absolute;
   right: .1%;
-	top: 3%;
+  top: 3%;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -234,64 +241,64 @@ h2 {
 /* book cover */
 
 .book-cover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   background: #eee;
 }
 .book-cover-title {
   padding: 20px 10px 0;
- text-align: center;
+  text-align: center;
   font-size: 0.8em;
 }
 
 /* Tabs */
 
 .tabs {
-	display: grid;
-	height: auto;
-	grid-template-columns: auto auto auto;
-	text-align: center;
-	font-size: 20px;
-	font-weight: 200;
-	text-transform: uppercase;
-	height: 100%;
+  display: grid;
+  height: auto;
+  grid-template-columns: auto auto auto;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 200;
+  text-transform: uppercase;
+  height: 100%;
 }
 
 .tabs a {
-	color: white;
-	text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .currently-reading-tab,
 .want-to-read-tab,
 .already-read-tab {
-	border-right: 1px solid rgba(255,255,255,.12);
-	height: 100%;
-	width: 100%;
-	cursor: pointer;
+  border-right: 1px solid rgba(255, 255, 255, .12);
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
 }
 
 .currently-reading-tab span,
 .want-to-read-tab span,
 .already-read-tab span {
-	padding-top: 12px;
-	padding-bottom: 8px;
-	display: block;
+  padding-top: 12px;
+  padding-bottom: 8px;
+  display: block;
 }
 
 .currently-reading-tabs {
-	grid-column-start: 1;
+  grid-column-start: 1;
 }
 
 .want-to-read-tabs {
-	grid-column-start: 2;
+  grid-column-start: 2;
 }
 
 .already-read-tabs {
-	grid-column-start: 3;
+  grid-column-start: 3;
 }
 
 .active {
-	border-bottom: 4px solid white;
+  border-bottom: 4px solid white;
 }
 
 /*Search*/
@@ -332,17 +339,17 @@ h2 {
 }
 
 .book-shelf-changer__search {
-	position: absolute;
-	right: 12px;
-	bottom: 0%;
-	width: 91%;
-	height: 31px;
+  position: absolute;
+  right: 12px;
+  bottom: 0%;
+  width: 91%;
+  height: 31px;
   background-image: url('./icons/more-vert.svg');
-	background-repeat: no-repeat;
-	background-position: right;
-	background-size: 5px;
-	background-color: rgba(0,0,0,.55);
-	background-position-x: 112px;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 5px;
+  background-color: rgba(0, 0, 0, .55);
+  background-position-x: 112px;
 }
 
 .book-shelf-changer__search select {
