@@ -3,6 +3,7 @@ import Changer from './Changer';
 
 class SearchResult extends Component {
   render() {
+    let {book} = this.props;
     return (
       <li>
         <div className="book__search">
@@ -13,21 +14,18 @@ class SearchResult extends Component {
                 width: '128px',
                 height: '100%',
                 backgroundSize: 'cover',
-                backgroundImage: `url('${this.props.cover}')`,
+                backgroundImage: `url('${book.imageLinks.thumbnail}')`,
               }}
             />
             <div className="book-shelf-changer__search">
-              <Changer
-                book={this.props.book}
-                updateBooks={this.props.updateBooks}
-              />
+              <Changer book={book} updateBooks={this.props.updateBooks} />
             </div>
           </div>
           <div className="book-title__search">
-            {this.props.title}
+            {book.title && book.title}
           </div>
           <div className="book-authors__search">
-            {this.props.author}
+            {Array.isArray(book.authors) && book.authors}
           </div>
         </div>
       </li>

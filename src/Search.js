@@ -26,9 +26,6 @@ class Search extends Component {
               searchResults.map(book =>
                 <SearchResult
                   key={book.id}
-                  title={book.title}
-                  cover={book.imageLinks && book.imageLinks.thumbnail}
-                  author={Array.isArray(book.authors) && book.authors}
                   book={book}
                   searchBooks={searchBooks}
                   searchResults={searchResults}
