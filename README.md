@@ -6,9 +6,9 @@ Clone the directory
 
 	git clone http://github.com/rtaibah/my-books
 
-Install requirements
+Change directory then install requirements
 
-	npm install
+	cd my-books && npm install
 
 Run application
 
