@@ -29,13 +29,16 @@ class App extends Component {
 
   updateBooks(book, shelf) {
     BooksAPI.update(book, shelf);
-    const index = this.state.books.indexOf(book);
+    // Find index of book based on comparison of id's
+    const index = this.state.books.findIndex(
+      shelfedBook => shelfedBook.id === book.id,
+    );
     const {books} = this.state;
 
     // Handle when new book is added with no index resulting in a '-1' index
     if (index === -1) {
       this.setState({
-        books: [...books.push(book)],
+        books: [...books, {...book, shelf: shelf}],
       });
     }
 
@@ -56,6 +59,15 @@ class App extends Component {
   searchBooks(query) {
     BooksAPI.search(query, 2)
       .then(searchResults => {
+        this.state.books.forEach(book => {
+          // return index of book if exists in search results
+          const index = searchResults.findIndex(
+            searchResult => searchResult.id === book.id,
+          );
+          if (index !== -1) {
+            searchResults[index].shelf = book.shelf;
+          }
+        });
         searchResults && this.setState({searchResults});
       })
       .catch(e => {
